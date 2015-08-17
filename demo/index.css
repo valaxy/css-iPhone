@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background: #303030; }
 
@@ -18,7 +19,8 @@ body {
     margin: auto;
     width: 320px;
     height: 568px;
-    background: #222; }
+    background: #ddd url("../resource/background.jpg") no-repeat;
+    background-size: 100% 100%; }
   .iphone:before {
     content: '';
     position: absolute;
@@ -32,11 +34,76 @@ body {
     box-sizing: border-box;
     border: 5px solid #333; }
   .iphone .c1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
     width: 60px;
     height: 10px;
     border-radius: 10px;
-    position: absolute;
-    left: 50%;
-    margin-left: -30px;
     background: #333;
     top: 50px; }
+  .iphone .net {
+    position: absolute;
+    left: 33px;
+    top: 106px;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background: white;
+    z-index: 1;
+    box-shadow: 9px 0 white, 18px 0 white, 27px 0 white, 36px 0 white; }
+  .iphone .battery {
+    width: 24px;
+    height: 8px;
+    background: transparent;
+    border: 1px solid black;
+    box-shadow: 0 0 0 1px white inset;
+    position: absolute;
+    right: 35px;
+    top: 105px;
+    z-index: 1; }
+    .iphone .battery:before {
+      content: '';
+      width: 18px;
+      height: 6px;
+      background: #06e563;
+      position: absolute;
+      left: 1px;
+      top: 1px; }
+    .iphone .battery:after {
+      content: '';
+      width: 2px;
+      height: 6px;
+      background: black;
+      position: absolute;
+      right: -3px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      top: 1px; }
+  .iphone .menu {
+    position: absolute;
+    left: 30px;
+    bottom: 100px;
+    height: 100px;
+    background: white;
+    width: 320px;
+    z-index: 1;
+    opacity: 0.5; }
+  .iphone .operator:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 102px;
+    content: '中国微信';
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-family: 'Microsoft YaHei'; }

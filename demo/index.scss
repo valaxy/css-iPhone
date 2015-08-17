@@ -8,4 +8,8 @@ body {
 .iphone {
 	@include iphone();
 	.c1 { @include component1; }
+	.net { @include net; }
+	.battery { @include battery; }
+	.menu { @include menu; }
+	.operator { @include operator; }
 }

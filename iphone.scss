@@ -1,8 +1,27 @@
 @charset "utf-8";
 
+$PADDING_HORIZONTAL: 30px;
+$PADDING_VERTICAL: 100px;
+$SCREEN_LEFT: $PADDING_HORIZONTAL;
+$SCREEN_TOP: $PADDING_VERTICAL;
+
+@mixin horizontalCenter {
+	position:     absolute;
+	left:         0;
+	right:        0;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+@mixin verticalCenter {
+	position:      absolute;
+	top:           0;
+	bottom:        0;
+	margin-top:    auto;
+	margin-bottom: auto;
+}
+
 @mixin iphone($width:380px,$height:768px) {
-	$PADDING_HORIZONTAL: 30px;
-	$PADDING_VERTICAL: 100px;
 	position:      relative;
 	background:    #111;
 	box-shadow:    0 0 0 2px #aaa;
@@ -12,16 +31,17 @@
 
 	// screen
 	&:after {
-		content:    '';
-		position:   absolute;
-		left:       0;
-		right:      0;
-		top:        0;
-		bottom:     0;
-		margin:     auto;
-		width:      $width - 2*$PADDING_HORIZONTAL;
-		height:     $height - 2*$PADDING_VERTICAL;
-		background: #222;
+		content:         '';
+		position:        absolute;
+		left:            0;
+		right:           0;
+		top:             0;
+		bottom:          0;
+		margin:          auto;
+		width:           $width - 2*$PADDING_HORIZONTAL;
+		height:          $height - 2*$PADDING_VERTICAL;
+		background:      #ddd url('../resource/background.jpg') no-repeat;
+		background-size: 100% 100%;
 	}
 
 	// home button
@@ -41,13 +61,92 @@
 	}
 }
 
+// top
 @mixin component1 {
+	@include horizontalCenter;
+	margin:        auto;
 	width:         60px;
 	height:        10px;
 	border-radius: 10px;
-	position:      absolute;
-	left:          50%;
-	margin-left:   -30px;
 	background:    #333;
 	top:           50px;
+}
+
+// 信号强度
+@mixin net {
+	$COLOR: white;
+	$SIZE: 6px;
+	$DISTANCE: 9px;
+	position:      absolute;
+	left:          $SCREEN_LEFT + 3px;
+	top:           $SCREEN_TOP + 6px;
+	content:       '';
+	width:         $SIZE;
+	height:        $SIZE;
+	border-radius: 100%;
+	background:    $COLOR;
+	z-index:       1;
+	box-shadow:    $DISTANCE 0 $COLOR, $DISTANCE*2 0 $COLOR, $DISTANCE*3 0 $COLOR, $DISTANCE*4 0 $COLOR;
+}
+
+// 电池
+@mixin battery {
+	width:      24px;
+	height:     8px;
+	background: transparent;
+	border:     1px solid black;
+	box-shadow: 0 0 0 1px white inset;
+	position:   absolute;
+	right:      $SCREEN_LEFT + 5px;
+	top:        $SCREEN_TOP + 5px;
+	z-index:    1;
+
+	&:before {
+		content:    '';
+		width:      18px;
+		height:     6px;
+		background: #06e563;
+		position:   absolute;
+		left:       1px;
+		top:        1px;
+	}
+
+	&:after {
+		content:                    '';
+		width:                      2px;
+		height:                     6px;
+		background:                 black;
+		position:                   absolute;
+		right:                      -3px;
+		border-top-right-radius:    2px;
+		border-bottom-right-radius: 2px;
+		top:                        1px;
+	}
+}
+
+// 底部菜单
+@mixin menu($width:380px) {
+	position:   absolute;
+	left:       $SCREEN_LEFT;
+	bottom:     $SCREEN_TOP;
+	height:     100px;
+	background: white;
+	width:      $width - 2 * $PADDING_HORIZONTAL;
+	z-index:    1;
+	opacity:    0.5;
+}
+
+// 运营商
+@mixin operator() {
+	&:before {
+		@include horizontalCenter;
+		top:         $SCREEN_TOP + 2px;
+		content:     '中国微信';
+		z-index:     1;
+		width:       100%;
+		text-align:  center;
+		color:       white;
+		font-size:   12px;
+		font-family: 'Microsoft YaHei';
+	}
 }
