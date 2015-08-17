@@ -1,109 +1,83 @@
-@charset "UTF-8";
+/*-----------------------------------------
+  iPhone6 Detail
+  -----------------------------------------
+  screen-resolution-height: 1334px
+  screen-resolution-width:  750px
+  ppi:                      326
+  -----------------------------------------
+  device-height:            138.1mm
+  device-width:             67.0mm
+  screen-height:            103.9mm
+  screen-width:             58.4mm
+  -----------------------------------------
+  bottomMenu:               98px
+  topBar:                   40px
+-----------------------------------------*/
+/**
+ * The default iPhone is iPhone6
+ * deviceWidth: default value or width, height/width is fix
+ * deviceHeight: default value or height, height/width is fix
+ */
 body {
   background: #303030; }
 
 .iphone {
   position: relative;
   background: #111;
-  box-shadow: 0 0 0 2px #aaa;
-  border-radius: 55px;
-  width: 380px;
-  height: 768px; }
-  .iphone:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 320px;
-    height: 568px;
-    background: #ddd url("../resource/background.jpg") no-repeat;
-    background-size: 100% 100%; }
-  .iphone:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    border-radius: 100%;
-    box-sizing: border-box;
-    border: 5px solid #333; }
-  .iphone .c1 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin: auto;
-    width: 60px;
-    height: 10px;
-    border-radius: 10px;
-    background: #333;
-    top: 50px; }
-  .iphone .net {
-    position: absolute;
-    left: 33px;
-    top: 106px;
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 100%;
-    background: white;
-    z-index: 1;
-    box-shadow: 9px 0 white, 18px 0 white, 27px 0 white, 36px 0 white; }
-  .iphone .battery {
-    width: 24px;
-    height: 8px;
-    background: transparent;
-    border: 1px solid black;
-    box-shadow: 0 0 0 1px white inset;
-    position: absolute;
-    right: 35px;
-    top: 105px;
-    z-index: 1; }
-    .iphone .battery:before {
-      content: '';
-      width: 18px;
-      height: 6px;
-      background: #06e563;
-      position: absolute;
-      left: 1px;
-      top: 1px; }
-    .iphone .battery:after {
-      content: '';
-      width: 2px;
-      height: 6px;
-      background: black;
-      position: absolute;
-      right: -3px;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      top: 1px; }
-  .iphone .menu {
-    position: absolute;
-    left: 30px;
-    bottom: 100px;
-    height: 100px;
-    background: white;
-    width: 320px;
-    z-index: 1;
-    opacity: 0.5; }
-  .iphone .operator:before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 102px;
-    content: '中国微信';
-    z-index: 1;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 12px;
-    font-family: 'Microsoft YaHei'; }
+  box-shadow: 0 0 0 1px #aaa;
+  border-radius: 5.41424vh;
+  width: 38.81245vh;
+  height: 80vh; }
+.iphone:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  content: '';
+  height: 60.18827vh;
+  width: 33.83898vh;
+  background: #ddd url("../resource/background.jpg") no-repeat;
+  background-size: 100% 100%; }
+.iphone:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  content: '';
+  width: 6.20999vh;
+  height: 6.20999vh;
+  bottom: 1.84794vh;
+  border-radius: 100%;
+  box-sizing: border-box;
+  border: 5px solid #333; }
+.iphone .bottomMenu {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 9.90587vh;
+  width: 33.83898vh;
+  height: 4.42163vh;
+  background: white;
+  z-index: 1;
+  opacity: 0.5; }
+.iphone .component1 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+  width: 6.17118vh;
+  height: 10px;
+  border-radius: 10px;
+  background: #333;
+  top: 4.95293vh; }
