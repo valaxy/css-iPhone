@@ -1,0 +1,42 @@
+body {
+  background: #303030; }
+
+.iphone {
+  position: relative;
+  background: #111;
+  box-shadow: 0 0 0 2px #aaa;
+  border-radius: 55px;
+  width: 380px;
+  height: 768px; }
+  .iphone:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 320px;
+    height: 568px;
+    background: #222; }
+  .iphone:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 5px solid #333; }
+  .iphone .c1 {
+    width: 60px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    background: #333;
+    top: 50px; }

@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@mixin iphone($width:380px,$height:768px) {
+	$PADDING_HORIZONTAL: 30px;
+	$PADDING_VERTICAL: 100px;
+	position:      relative;
+	background:    #111;
+	box-shadow:    0 0 0 2px #aaa;
+	border-radius: 55px;
+	width:         $width;
+	height:        $height;
+
+	// screen
+	&:after {
+		content:    '';
+		position:   absolute;
+		left:       0;
+		right:      0;
+		top:        0;
+		bottom:     0;
+		margin:     auto;
+		width:      $width - 2*$PADDING_HORIZONTAL;
+		height:     $height - 2*$PADDING_VERTICAL;
+		background: #222;
+	}
+
+	// home button
+	&:before {
+		$HOME_SIZE: 60px;
+		content:       '';
+		position:      absolute;
+		left:          0;
+		right:         0;
+		margin:        auto;
+		width:         $HOME_SIZE;
+		height:        $HOME_SIZE;
+		bottom:        ($PADDING_VERTICAL - $HOME_SIZE)/2;
+		border-radius: 100%;
+		box-sizing:    border-box;
+		border:        5px solid #333;
+	}
+}
+
+@mixin component1 {
+	width:         60px;
+	height:        10px;
+	border-radius: 10px;
+	position:      absolute;
+	left:          50%;
+	margin-left:   -30px;
+	background:    #333;
+	top:           50px;
+}
