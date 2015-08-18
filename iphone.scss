@@ -63,7 +63,7 @@ $BOTTOM_MENU_HEIGHT_RATIO: 98 / 1334 * $SCREEN_HEIGHT_RATIO;
 	}
 
 	// calc basic params
-	$screenHeight: $deviceHeight * 103.9 / 138.1;
+	$screenHeight: $deviceHeight * $SCREEN_HEIGHT_RATIO;
 	$screenWidth: $screenHeight / $SCREEN_RATIO;
 	$paddingHorizontal: ($deviceWidth - $screenWidth) / 2;
 	$paddingVertical: ($deviceHeight - $screenHeight) / 2;
@@ -100,7 +100,7 @@ $BOTTOM_MENU_HEIGHT_RATIO: 98 / 1334 * $SCREEN_HEIGHT_RATIO;
 		bottom:        (($deviceHeight - $screenHeight) / 2 - $size)/2;
 		border-radius: 100%;
 		box-sizing:    border-box;
-		border:        5px solid #333;
+		border:        $deviceHeight * 0.009 solid #333;
 	}
 
 	// bottom menu in screen
@@ -128,14 +128,14 @@ $BOTTOM_MENU_HEIGHT_RATIO: 98 / 1334 * $SCREEN_HEIGHT_RATIO;
 	// 信号强度
 	.net {
 		$COLOR: white;
-		$SIZE: 6px;
-		$DISTANCE: 9px;
+		$size: $deviceHeight * 0.00635;
+		$DISTANCE: $deviceHeight * 0.00935;
 		position:      absolute;
 		left:          $paddingHorizontal + $deviceWidth * 0.01;
 		top:           $paddingVertical + $deviceHeight * 0.005;
 		content:       '';
-		width:         $SIZE;
-		height:        $SIZE;
+		width:         $size;
+		height:        $size;
 		border-radius: 100%;
 		background:    $COLOR;
 		z-index:       1;
@@ -159,33 +159,36 @@ $BOTTOM_MENU_HEIGHT_RATIO: 98 / 1334 * $SCREEN_HEIGHT_RATIO;
 
 	// 电池
 	.battery {
-		width:      24px;
-		height:     8px;
-		background: transparent;
-		border:     1px solid black;
-		box-shadow: 0 0 0 1px white inset;
-		position:   absolute;
-		right:      $paddingHorizontal + $deviceWidth * 0.01;
-		top:        $paddingVertical + $deviceHeight * 0.005;
-		z-index:    1;
+		width:         $screenWidth * 0.055;
+		height:        $screenWidth * 0.020;
+		border-radius: 1px;
+		background:    transparent;
+		border:        1px solid white;
+		//box-shadow:    0 0 0 1px white inset;
+		position:      absolute;
+		right:         $paddingHorizontal + $deviceWidth * 0.01;
+		top:           $paddingVertical + $deviceHeight * 0.005;
+		z-index:       1;
 
+		// power bar
 		&:before {
-			content:    '';
-			width:      18px;
-			height:     6px;
-			background: #06e563;
 			position:   absolute;
 			left:       1px;
 			top:        1px;
+			content:    '';
+			width:      $screenWidth * 0.032;
+			height:     $screenWidth * 0.015;
+			background: white;
 		}
 
+		// power sole
 		&:after {
 			content:                    '';
-			width:                      2px;
-			height:                     6px;
-			background:                 black;
 			position:                   absolute;
-			right:                      -3px;
+			width:                      $screenWidth * 0.010;
+			height:                     $screenWidth * 0.015;
+			background:                 white;
+			right:                      -3.5px;
 			border-top-right-radius:    2px;
 			border-bottom-right-radius: 2px;
 			top:                        1px;

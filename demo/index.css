@@ -57,7 +57,7 @@ body {
   bottom: 2.19442vh;
   border-radius: 100%;
   box-sizing: border-box;
-  border: 5px solid #333; }
+  border: 0.855vh solid #333; }
 .iphone .bottomMenu {
   position: absolute;
   left: 0;
@@ -87,12 +87,12 @@ body {
   left: 3.4139vh;
   top: 12.23822vh;
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 0.60325vh;
+  height: 0.60325vh;
   border-radius: 100%;
   background: white;
   z-index: 1;
-  box-shadow: 9px 0 white, 18px 0 white, 27px 0 white, 36px 0 white; }
+  box-shadow: 0.88825vh 0 white, 1.7765vh 0 white, 2.66475vh 0 white, 3.553vh 0 white; }
 .iphone .operator:before {
   position: absolute;
   left: 0;
@@ -108,30 +108,30 @@ body {
   font-size: 12px;
   font-family: 'Microsoft YaHei'; }
 .iphone .battery {
-  width: 24px;
-  height: 8px;
+  width: 2.21011vh;
+  height: 0.80368vh;
+  border-radius: 1px;
   background: transparent;
-  border: 1px solid black;
-  box-shadow: 0 0 0 1px white inset;
+  border: 1px solid white;
   position: absolute;
   right: 3.4139vh;
   top: 12.23822vh;
   z-index: 1; }
   .iphone .battery:before {
-    content: '';
-    width: 18px;
-    height: 6px;
-    background: #06e563;
     position: absolute;
     left: 1px;
-    top: 1px; }
+    top: 1px;
+    content: '';
+    width: 1.28588vh;
+    height: 0.60276vh;
+    background: white; }
   .iphone .battery:after {
     content: '';
-    width: 2px;
-    height: 6px;
-    background: black;
     position: absolute;
-    right: -3px;
+    width: 0.40184vh;
+    height: 0.60276vh;
+    background: white;
+    right: -3.5px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     top: 1px; }
