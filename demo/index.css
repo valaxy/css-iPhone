@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*-----------------------------------------
   iPhone6 Detail
   -----------------------------------------
@@ -25,9 +26,9 @@ body {
   position: relative;
   background: #111;
   box-shadow: 0 0 0 1px #aaa;
-  border-radius: 5.41424vh;
-  width: 38.81245vh;
-  height: 80vh; }
+  border-radius: 6.42941vh;
+  width: 46.08979vh;
+  height: 95vh; }
 .iphone:after {
   position: absolute;
   left: 0;
@@ -40,9 +41,9 @@ body {
   margin-top: auto;
   margin-bottom: auto;
   content: '';
-  height: 60.18827vh;
-  width: 33.83898vh;
-  background: #ddd url("../resource/background.jpg") no-repeat;
+  height: 71.47357vh;
+  width: 40.18379vh;
+  background: #222;
   background-size: 100% 100%; }
 .iphone:before {
   position: absolute;
@@ -51,9 +52,9 @@ body {
   margin-left: auto;
   margin-right: auto;
   content: '';
-  width: 6.20999vh;
-  height: 6.20999vh;
-  bottom: 1.84794vh;
+  width: 7.37437vh;
+  height: 7.37437vh;
+  bottom: 2.19442vh;
   border-radius: 100%;
   box-sizing: border-box;
   border: 5px solid #333; }
@@ -63,9 +64,9 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  bottom: 9.90587vh;
-  width: 33.83898vh;
-  height: 4.42163vh;
+  bottom: 11.76322vh;
+  width: 40.18379vh;
+  height: 3.95037vh;
   background: white;
   z-index: 1;
   opacity: 0.5; }
@@ -76,8 +77,61 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin: auto;
-  width: 6.17118vh;
+  width: 7.32828vh;
   height: 10px;
   border-radius: 10px;
   background: #333;
-  top: 4.95293vh; }
+  top: 5.88161vh; }
+.iphone .net {
+  position: absolute;
+  left: 3.4139vh;
+  top: 12.23822vh;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background: white;
+  z-index: 1;
+  box-shadow: 9px 0 white, 18px 0 white, 27px 0 white, 36px 0 white; }
+.iphone .operator:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 11.85822vh;
+  content: '中国微信';
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-family: 'Microsoft YaHei'; }
+.iphone .battery {
+  width: 24px;
+  height: 8px;
+  background: transparent;
+  border: 1px solid black;
+  box-shadow: 0 0 0 1px white inset;
+  position: absolute;
+  right: 3.4139vh;
+  top: 12.23822vh;
+  z-index: 1; }
+  .iphone .battery:before {
+    content: '';
+    width: 18px;
+    height: 6px;
+    background: #06e563;
+    position: absolute;
+    left: 1px;
+    top: 1px; }
+  .iphone .battery:after {
+    content: '';
+    width: 2px;
+    height: 6px;
+    background: black;
+    position: absolute;
+    right: -3px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    top: 1px; }

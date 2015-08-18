@@ -6,8 +6,5 @@ body {
 }
 
 .iphone {
-	@include iphone();
-	//.net { @include net; }
-	//.battery { @include battery; }
-	//.operator { @include operator; }
+	@include iphone(null, 95vh);
 }

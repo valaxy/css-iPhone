@@ -26,12 +26,10 @@ $DEVICE_DEFAULT_HEIGHT: 80vh;
 $DEVICE_DEFAULT_WIDTH: $DEVICE_DEFAULT_HEIGHT / $DEVICE_RATIO;
 $SCREEN_RATIO: 1334 / 750;
 
-// calc const
-$PADDING_HORIZONTAL: 30px;
-$PADDING_VERTICAL: 100px;
-$SCREEN_LEFT: $PADDING_HORIZONTAL;
-$SCREEN_TOP: $PADDING_VERTICAL;
-$BOTTOM_MENU_RATIO: 98 / 1334;
+// radio base DEVICE
+$SCREEN_HEIGHT_RATIO: 103.9 / 138.1;
+$TOP_BAR_HEIGHT_RATIO: 40 / 1334 * $SCREEN_HEIGHT_RATIO;
+$BOTTOM_MENU_HEIGHT_RATIO: 98 / 1334 * $SCREEN_HEIGHT_RATIO;
 
 @mixin horizontalCenter {
 	position:     absolute;
@@ -69,6 +67,8 @@ $BOTTOM_MENU_RATIO: 98 / 1334;
 	$screenWidth: $screenHeight / $SCREEN_RATIO;
 	$paddingHorizontal: ($deviceWidth - $screenWidth) / 2;
 	$paddingVertical: ($deviceHeight - $screenHeight) / 2;
+	$topBarHeight: $deviceHeight * $TOP_BAR_HEIGHT_RATIO;
+	$bottomMenuHeight: $deviceHeight * $BOTTOM_MENU_HEIGHT_RATIO;
 
 	& {
 		position:      relative;
@@ -86,7 +86,7 @@ $BOTTOM_MENU_RATIO: 98 / 1334;
 		content:         '';
 		height:          $screenHeight;
 		width:           $screenWidth;
-		background:      #ddd url('../resource/background.jpg') no-repeat;
+		background:      #222; // url('../resource/background.jpg') no-repeat;
 		background-size: 100% 100%;
 	}
 
@@ -108,7 +108,7 @@ $BOTTOM_MENU_RATIO: 98 / 1334;
 		@include horizontalCenter;
 		bottom:     $paddingVertical;
 		width:      $screenWidth;
-		height:     $screenHeight * $BOTTOM_MENU_RATIO;
+		height:     $screenHeight * $BOTTOM_MENU_HEIGHT_RATIO;
 		background: white;
 		z-index:    1;
 		opacity:    0.5;
@@ -125,71 +125,72 @@ $BOTTOM_MENU_RATIO: 98 / 1334;
 		top:           $paddingVertical / 2;
 	}
 
+	// 信号强度
+	.net {
+		$COLOR: white;
+		$SIZE: 6px;
+		$DISTANCE: 9px;
+		position:      absolute;
+		left:          $paddingHorizontal + $deviceWidth * 0.01;
+		top:           $paddingVertical + $deviceHeight * 0.005;
+		content:       '';
+		width:         $SIZE;
+		height:        $SIZE;
+		border-radius: 100%;
+		background:    $COLOR;
+		z-index:       1;
+		box-shadow:    $DISTANCE 0 $COLOR, $DISTANCE*2 0 $COLOR, $DISTANCE*3 0 $COLOR, $DISTANCE*4 0 $COLOR;
+	}
+
+	// 运营商
+	.operator {
+		&:before {
+			@include horizontalCenter;
+			top:         $paddingVertical + $deviceHeight * 0.001;
+			content:     '中国微信';
+			z-index:     1;
+			width:       100%;
+			text-align:  center;
+			color:       white;
+			font-size:   12px;
+			font-family: 'Microsoft YaHei';
+		}
+	}
+
+	// 电池
+	.battery {
+		width:      24px;
+		height:     8px;
+		background: transparent;
+		border:     1px solid black;
+		box-shadow: 0 0 0 1px white inset;
+		position:   absolute;
+		right:      $paddingHorizontal + $deviceWidth * 0.01;
+		top:        $paddingVertical + $deviceHeight * 0.005;
+		z-index:    1;
+
+		&:before {
+			content:    '';
+			width:      18px;
+			height:     6px;
+			background: #06e563;
+			position:   absolute;
+			left:       1px;
+			top:        1px;
+		}
+
+		&:after {
+			content:                    '';
+			width:                      2px;
+			height:                     6px;
+			background:                 black;
+			position:                   absolute;
+			right:                      -3px;
+			border-top-right-radius:    2px;
+			border-bottom-right-radius: 2px;
+			top:                        1px;
+		}
+	}
 }
 
-//// 信号强度
-//@mixin net {
-//	$COLOR: white;
-//	$SIZE: 6px;
-//	$DISTANCE: 9px;
-//	position:      absolute;
-//	left:          $SCREEN_LEFT + 3px;
-//	top:           $SCREEN_TOP + 6px;
-//	content:       '';
-//	width:         $SIZE;
-//	height:        $SIZE;
-//	border-radius: 100%;
-//	background:    $COLOR;
-//	z-index:       1;
-//	box-shadow:    $DISTANCE 0 $COLOR, $DISTANCE*2 0 $COLOR, $DISTANCE*3 0 $COLOR, $DISTANCE*4 0 $COLOR;
-//}
-//
-//// 电池
-//@mixin battery {
-//	width:      24px;
-//	height:     8px;
-//	background: transparent;
-//	border:     1px solid black;
-//	box-shadow: 0 0 0 1px white inset;
-//	position:   absolute;
-//	right:      $SCREEN_LEFT + 5px;
-//	top:        $SCREEN_TOP + 5px;
-//	z-index:    1;
-//
-//	&:before {
-//		content:    '';
-//		width:      18px;
-//		height:     6px;
-//		background: #06e563;
-//		position:   absolute;
-//		left:       1px;
-//		top:        1px;
-//	}
-//
-//	&:after {
-//		content:                    '';
-//		width:                      2px;
-//		height:                     6px;
-//		background:                 black;
-//		position:                   absolute;
-//		right:                      -3px;
-//		border-top-right-radius:    2px;
-//		border-bottom-right-radius: 2px;
-//		top:                        1px;
-//	}
-//}
-//
-//// 运营商
-//@mixin operator() {
-//	&:before {
-//		@include horizontalCenter;
-//		top:         $SCREEN_TOP + 2px;
-//		content:     '中国微信';
-//		z-index:     1;
-//		width:       100%;
-//		text-align:  center;
-//		color:       white;
-//		font-size:   12px;
-//		font-family: 'Microsoft YaHei';
-//	}
-//}
+
